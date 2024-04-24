@@ -55,10 +55,13 @@ const populateList = async (type = "", format = "") => {
     });
 }
 
+let prevFilter = "";
+
 const changePrevSearch = (newValue) => {
     $("#previous-search").text("");
     $("#previous-search").append("<b>Previous search:</b> ");
-    $("#previous-search").append(newValue);
+    $("#previous-search").append(prevFilter);
+    prevFilter = newValue;
 }
 
 const main = async (event) => {
